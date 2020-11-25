@@ -6,6 +6,7 @@ const {
     Bodies
 } = Matter;
 
+const cells = 5;
 const width = 600;
 const height = 600;
 
@@ -36,8 +37,26 @@ const walls = [
     Bodies.rectangle(0, height / 2, 40, height, {
         isStatic: true
     }),
-    Bodies.rectangle( width, height / 2, 40, height, {
+    Bodies.rectangle(width, height / 2, 40, height, {
         isStatic: true
     })
 ];
 World.add(world, walls);
+
+// Maze generation
+
+const grid = Array(cells)
+    .fill(null)
+    .map(() => Array(cells).fill(false));
+
+const verticals = Array(cells)
+    .fill(null)
+    .map(() => Array(cells - 1).fill(false));
+
+const horizontals = Array(cells - 1)
+    .fill(null)
+    .map(() => Array(cells).fill(false));
+
+console.log(grid);
+console.log(verticals);
+console.log(horizontals);
