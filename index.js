@@ -10,8 +10,8 @@ const {
 
 const cellsHorizontal = 10;
 const cellsVertical = 6;
-const width = window.innerWidth;
-const height = window.innerHeight;
+const width = window.innerWidth - 4;
+const height = window.innerHeight - 4;
 
 const unitLengthX = width / cellsHorizontal;
 const unitLengthY = height / cellsVertical;
